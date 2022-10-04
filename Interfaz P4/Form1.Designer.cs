@@ -32,8 +32,8 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.cbPuertos = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDatos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtDatos = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // btnAbrir
@@ -73,15 +73,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Puertos:";
             // 
-            // txtDatos
-            // 
-            this.txtDatos.Location = new System.Drawing.Point(153, 96);
-            this.txtDatos.Multiline = true;
-            this.txtDatos.Name = "txtDatos";
-            this.txtDatos.Size = new System.Drawing.Size(327, 145);
-            this.txtDatos.TabIndex = 4;
-            this.txtDatos.TextChanged += new System.EventHandler(this.txtDatos_TextChanged);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -91,11 +82,20 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Datos Raspberry:";
             // 
+            // txtDatos
+            // 
+            this.txtDatos.Location = new System.Drawing.Point(153, 96);
+            this.txtDatos.Name = "txtDatos";
+            this.txtDatos.Size = new System.Drawing.Size(339, 163);
+            this.txtDatos.TabIndex = 7;
+            this.txtDatos.Text = "";
+            this.txtDatos.TextChanged += new System.EventHandler(this.txtDatos_TextChanged_1);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(573, 294);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtDatos);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbPuertos);
             this.Controls.Add(this.btnCerrar);
@@ -119,8 +119,8 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.ComboBox cbPuertos;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtDatos;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RichTextBox txtDatos;
     }
 }
 

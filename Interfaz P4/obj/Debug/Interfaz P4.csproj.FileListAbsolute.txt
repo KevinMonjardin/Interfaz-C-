@@ -1,0 +1,12 @@
+/mnt/c/projects/c#/Interfaz-C-/Interfaz P4/obj/Debug/Interfaz P4.exe
+/mnt/c/projects/c#/Interfaz-C-/Interfaz P4/obj/Debug/Interfaz P4.pdb
+C:\projects\c#\Interfaz-C-\Interfaz P4\bin\Debug\Interfaz P4.exe.config
+C:\projects\c#\Interfaz-C-\Interfaz P4\bin\Debug\Interfaz P4.exe
+C:\projects\c#\Interfaz-C-\Interfaz P4\bin\Debug\Interfaz P4.pdb
+C:\projects\c#\Interfaz-C-\Interfaz P4\obj\Debug\Interfaz_P4.Form1.resources
+C:\projects\c#\Interfaz-C-\Interfaz P4\obj\Debug\Interfaz_P4.Properties.Resources.resources
+C:\projects\c#\Interfaz-C-\Interfaz P4\obj\Debug\Interfaz P4.csproj.GenerateResource.cache
+C:\projects\c#\Interfaz-C-\Interfaz P4\obj\Debug\Interfaz P4.csproj.CoreCompileInputs.cache
+C:\projects\c#\Interfaz-C-\Interfaz P4\obj\Debug\Interfaz P4.exe
+C:\projects\c#\Interfaz-C-\Interfaz P4\obj\Debug\Interfaz P4.pdb
+C:\projects\c#\Interfaz-C-\Interfaz P4\obj\Debug\Interfaz P4.csproj.AssemblyReference.cache

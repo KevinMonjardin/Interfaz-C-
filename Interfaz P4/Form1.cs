@@ -13,17 +13,20 @@ namespace Interfaz_P4
 {
     public partial class Form1 : Form
     {
+
+        SerialPort mySerialPort = new SerialPort()
+        {
+            BaudRate = 9600,
+            Parity = Parity.None,
+            StopBits = StopBits.One,
+            DataBits = 8,
+            Handshake = Handshake.None,
+            RtsEnable = true,
+            DtrEnable = true
+        };
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private static void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
-        {
-            SerialPort sp = (SerialPort)sender;
-            string indata = sp.ReadExisting();
-            Console.WriteLine("Data Received:");
-            Console.Write(indata);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -33,19 +36,6 @@ namespace Interfaz_P4
             cbPuertos.SelectedIndex = 0;
             btnCerrar.Enabled = false;
 
-            String portName = "/dev/tty.usbmodem1101"; // Change this to your port name
-            SerialPort mySerialPort = new SerialPort(portName);
-            mySerialPort.BaudRate = 9600;
-            mySerialPort.Parity = Parity.None;
-            mySerialPort.StopBits = StopBits.One;
-            mySerialPort.DataBits = 8;
-            mySerialPort.Handshake = Handshake.None;
-            mySerialPort.RtsEnable = true;
-            mySerialPort.DtrEnable = true;
-            mySerialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
-            mySerialPort.Open();
-            Console.ReadKey();
-            mySerialPort.Close();
         }
 
         private void txtDatos_TextChanged(object sender, EventArgs e)
@@ -59,8 +49,13 @@ namespace Interfaz_P4
             btnCerrar.Enabled = true;
             try
             {
-                serialPort1.PortName = cbPuertos.Text;
-                serialPort1.Open();
+                mySerialPort.PortName = cbPuertos.Text;
+                mySerialPort.Open();
+                while (true)
+                {
+                    txtDatos.Text += $"{mySerialPort.ReadLine()}\n";
+                }
+                mySerialPort.Close();
             }
             catch (Exception ex)
             {
@@ -74,12 +69,18 @@ namespace Interfaz_P4
             btnCerrar.Enabled = false;
             try
             {
-                serialPort1.Close();
+                mySerialPort.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void txtDatos_TextChanged_1(object sender, EventArgs e)
+        {
+            txtDatos.SelectionStart = txtDatos.Text.Length;
+            txtDatos.ScrollToCaret();
         }
     }
 }
